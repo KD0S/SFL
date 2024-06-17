@@ -13,8 +13,23 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '100%' },
+        }
+      },
+      animation: {
+        fadeIn: 'fadeIn 2.5s cubic-bezier(0.4, 0, 0.2, 1)'
+      },
+      colors: {
+        btnpurple: "#D33FE0"
+      },
+      fontFamily: {
+        kelly: ['var(--font-kelly-slab)'],
+      },
     },
   },
-  plugins: [],
+  plugins: []
 };
 export default config;

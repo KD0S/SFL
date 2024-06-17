@@ -1,5 +1,5 @@
 # SFL
 
-## Frontend for SFL Website 
+### Frontend for SFL Website 
 
-### Built using NextJs & Typescript
+Built using NextJs & Typescript
