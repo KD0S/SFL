@@ -8,7 +8,7 @@ export default function MainPage() {
                 <button className="text-5xl bg-btnpurple w-[290px] h-[77px] font-bold italic rounded-full grid place-content-center">
                     <img src="./start.png" alt="start" width='180px' height='63px' />
                 </button>
-                <p className="text-center m-10 text-md font-kelly">08/05/2024 22:00 EST</p>
+                <p className="text-center text-yellow-200 m-10 text-md font-kelly animate-pulse">08/05/2024 22:00 EST</p>
             </div>
         </main >
     )
