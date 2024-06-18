@@ -18,16 +18,31 @@ const config: Config = {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '100%' },
-        }
+        },
+
+        fadeInOut: {
+          '0%': { opacity: '1' },
+          '50%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+
+        backgroundShift: {
+          '0%': { backgroundPosition: '0px -1600px' },
+          '20%': { backgroundPosition: '0px -1600px' },
+          '100%': { backgroundPosition: 'center' }
+        },
       },
       animation: {
-        fadeIn: 'fadeIn 2.5s cubic-bezier(0.4, 0, 0.2, 1)'
+        fadeIn: 'fadeIn 2.5s cubic-bezier(0.4, 0, 0.2, 1)',
+        fadeInOut: 'fadeInOut 4s cubic-bezier(0.4, 0, 0.2, 1)',
+        backgroundShift: 'backgroundShift 3s cubic-bezier(0.4, 0, 0.2, 1)',
       },
       colors: {
         btnpurple: "#D33FE0"
       },
       fontFamily: {
         kelly: ['var(--font-kelly-slab)'],
+        univers: ["Univers", 'sans']
       },
     },
   },
