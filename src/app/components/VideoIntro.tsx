@@ -5,7 +5,7 @@ export default function VideoIntro() {
 
     setTimeout(() => {
         setText('sfl')
-    }, 1400);
+    }, 2000);
 
     return (
         <main className="h-screen w-screen bg-black grid place-content-center">
