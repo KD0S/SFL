@@ -4,7 +4,7 @@ import VideoIntro from "./components/VideoIntro";
 import MainPage from "./components/MainPage";
 import { useState } from "react";
 
-export default function Home() {
+export default function Main() {
   const [content, setContent] = useState(<VideoIntro />)
 
   setTimeout(() => {
