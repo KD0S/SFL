@@ -44,6 +44,9 @@ const config: Config = {
         kelly: ['var(--font-kelly-slab)'],
         univers: ["Univers", 'sans']
       },
+      dropShadow: {
+        '3xl': '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      },
     },
   },
   plugins: []
