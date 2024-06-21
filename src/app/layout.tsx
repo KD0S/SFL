@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Kelly_Slab } from "next/font/google";
 import "./globals.css";
-import localFont from '@next/font/local'
+import localFont from 'next/font/local'
+
 
 const univers = localFont({
   src: [

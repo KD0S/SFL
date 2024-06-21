@@ -46,7 +46,12 @@ const config: Config = {
       },
       dropShadow: {
         '3xl': '0px 4px 4px rgba(0, 0, 0, 0.25)',
+        glow: [
+          "0 0px 20px rgba(255,255, 255, 0.35)",
+          "0 0px 65px rgba(255, 255,255, 0.2)"
+        ]
       },
+      
     },
   },
   plugins: []
