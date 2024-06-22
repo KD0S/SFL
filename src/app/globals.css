@@ -21,6 +21,19 @@
   }
 }
 
+html {
+  font-size: 12px;
+  @screen md {
+    font-size: 10px;
+  }
+  @screen lg {
+    font-size: 13px;
+  }
+  @screen xl {
+    font-size: 18px;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
@@ -39,9 +52,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 270px;
-  height: 200px;
-  padding-left: 20px;
+  @media (min-width: 1024px) 
+  {
+    width: 150px;
+    height: 100px;
+  }
+  width: 100px;
+  height: 75px;
   background-color: black;
   color: white;
   border: 5px solid black;
