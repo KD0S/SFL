@@ -13,7 +13,8 @@ export default function Home() {
     }, 2700);
 
     return (
-        <main className={`fixed overflow-hidden flex flex-col justify-center h-screen w-screen bg-cloud bg-cover bg-center animate-backgroundShift`}>
+        
+        <main className={`fixed flex flex-col justify-center h-screen w-screen bg-cloud bg-cover bg-center animate-backgroundShift`}>
             {playVid ?
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative w-full h-full">
@@ -30,14 +31,14 @@ export default function Home() {
                 : <div></div>
             }
             <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-5"></div>
-
-            <div className='z-10  h-full w-screen flex flex-col flex-1 justify-center items-center'>
+            
+            <div className='fixed top-0 left-0 w-full h-full z-10 flex flex-col flex-1 justify-center items-center'>
                 {/**<p className="text-white text-[16px] font-kelly absolute top-6 left-1/2 transform -translate-x-1/2 font-bold">08/05/2024&nbsp;&nbsp;&nbsp;&nbsp;22:00 EST</p>**/}
-                <Tilt className='parallax-effect h-full w-full shadow-2xl' perspective={1500}>
+                <Tilt className='parallax-effect h-full w-full shadow-2xl' tiltMaxAngleY={10} tiltMaxAngleX={10} perspective={1500}>
                     <div className='inner-element flex-col  justify-center grid place-content-center h-full w-full  my-5'>
                         <div className='flex flex-row'>
                             <div className='p-12 grid place-content-center'>
-                                <button className='text-6xl px-96 text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow'>about</button>
+                                <button className='text-6xl  md:px-96 px-0 text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow'>about</button>
                             </div>
                         </div>
                         <div className='w-screen flex justify-between lg:flex-nowrap flex-wrap'>
@@ -53,7 +54,7 @@ export default function Home() {
                         </div>
                         <div className='flex flex-row'>
                             <div className='p-12 grid place-content-center'>
-                                <button className='text-6xl px-96 text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow'>events</button>
+                                <button className='text-6xl md:px-96 px-0 text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow'>events</button>
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ export default function VideoIntro() {
 
     return (
         <main className="h-screen w-screen bg-black grid place-content-center">
-            <h1 className="text-8xl text-white font-univers font-bold italic tracking-wide animate-fadeInOut">
+            <h1 className="text-6xl text-white font-univers font-bold italic tracking-wide animate-fadeInOut">
                 {text}
             </h1>
         </main >

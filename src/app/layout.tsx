@@ -7,10 +7,6 @@ import localFont from 'next/font/local'
 const univers = localFont({
   src: [
     {
-      path: '../../public/fonts/UniversExtendedBQ-Black.otf',
-      weight: '400'
-    },
-    {
       path: '../../public/fonts/Univers LT 73 Black Extended Oblique.ttf',
       weight: '400'
     }
