@@ -27,8 +27,8 @@ const config: Config = {
         },
 
         backgroundShift: {
-          '0%': { backgroundPosition: '0px -1600px' },
-          '20%': { backgroundPosition: '0px -1600px' },
+          '0%': { backgroundPosition: '0px -1400px' },
+          '20%': { backgroundPosition: '0px -1400px' },
           '100%': { backgroundPosition: 'center' }
         },
       },
