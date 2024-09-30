@@ -32,10 +32,10 @@ export default function Navbar({ color, prevPage, prevPageLink }: navProps) {
 
     return (
         <nav className='top-0 w-full h-12 bg-black absolute flex justify-between z-10 px-5'>
-            <Link href={prevPageLink} className='w-24 my-auto font-bold font-univers drop-shadow-xl text-[18px] hover:text-[#937666] transition-all'>{`${prevPage}`}</Link>
+            <Link href={prevPageLink} className='w-24 my-auto text-start font-bold font-univers drop-shadow-xl text-[18px] hover:text-[#937666] transition-all'>{`${prevPage}`}</Link>
             <span className={`${colourScheme[color]} text-[16px] font-kelly my-auto mx-auto`}>
                 {dateTime.toLocaleDateString("en-GB")}&nbsp;&nbsp;{String(dateTime.getUTCHours() + 3).padStart(2, "0")}:{String(dateTime.getUTCMinutes()).padStart(2, "0")}</span>
-            <Link href={"/shop"} className='w-24 my-auto font-bold font-univers drop-shadow-xl text-[18px]  hover:text-[#937666] transition-all'>SHOP</Link>
+            <Link href={"/shop"} className='flex-end text-end w-24 my-auto font-bold font-univers drop-shadow-xl text-[18px]  hover:text-[#937666] transition-all'>SHOP</Link>
         </nav>
     )
 }
