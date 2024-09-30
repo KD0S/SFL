@@ -24,13 +24,16 @@
 html {
   font-size: 12px;
   font-weight: normal;
-  font-style: normal; 
+  font-style: normal;
+
   @screen md {
     font-size: 10px;
   }
+
   @screen lg {
     font-size: 13px;
   }
+
   @screen xl {
     font-size: 18px;
   }
@@ -43,46 +46,15 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
-.centerAbsolute{
+.centerAbsolute {
   position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-}
-
-.parallax-effect {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @media (min-width: 1024px) 
-  {
-    width: 150px;
-    height: 100px;
-  }
-  width: 100px;
-  height: 75px;
-  background-color: black;
-  color: white;
-  border: 5px solid black;
-  border-radius: 20px;
-
-  transform-style: preserve-3d;
-
-  .inner-element {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 35px;
-    font-style: italic;
-    color: white;
-    transform: translateZ(60px);
   }
 }
