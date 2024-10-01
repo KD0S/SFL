@@ -12,6 +12,8 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "cloud": "url('/cloudBg.jpeg')",
         "visual": "url('/visualBg.png')",
+        "stori": "url('/stori.png')",
+        "trap": "url('/trap.png')",
         "visual-blur": "url('/visualBlurredBg.png')",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
