@@ -35,8 +35,15 @@ const config: Config = {
           '20%': { backgroundPosition: '0px -1400px' },
           '100%': { backgroundPosition: 'center' }
         },
+
+        slide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }
+        }
+
       },
       animation: {
+        slideshow: 'slide 40s linear infinite',
         fadeIn: 'fadeIn 2.5s cubic-bezier(0.4, 0, 0.2, 1)',
         fadeInOut: 'fadeInOut 4s cubic-bezier(0.4, 0, 0.2, 1) 1 0.5s',
         backgroundShift: 'backgroundShift 3s cubic-bezier(0.4, 0, 0.2, 1)',
