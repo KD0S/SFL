@@ -29,7 +29,7 @@ export default function TrapNight() {
                 This is more than a DJ set; it's an invitation to immerse yourself in a movement and a space where culture is
                 celebrated.
             </p>
-            <iframe className="rounded-2xl mx-auto m-20 shadow-lg shadow-[#EB00FF]" width="710" height="400" src="https://www.youtube.com/embed/-J6SdRomd_0?si=LwA_Nh36JCaXVyGl?autoplay=1&loop=1"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-J6SdRomd_0?si=LNxcxG8AOZXP_QGG&amp;controls=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; loop"></iframe>
         </main >
     )
 }
