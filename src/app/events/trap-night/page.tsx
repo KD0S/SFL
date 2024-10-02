@@ -46,7 +46,7 @@ export default function TrapNight() {
                     <img src="/trapnight-photos/11.jpg" alt="1" />
                 </div>
             </div>
-            <a href="https://www.instagram.com/stewforlife/">
+            <a href="https://www.instagram.com/trapnightv/">
                 <img src="/insta.png" alt="insta-icon" className="mx-auto mb-4 w-[30px] hover:bg-[#dfaee3] rounded-lg transition-all hover" />
             </a>
         </main >
