@@ -1,10 +1,9 @@
-import React from "react"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import Link from "next/link"
 
 
-export default function Home() {
+export default function About() {
 
     return (
         <main className={`fixed h-full w-full bg-cloud bg-cover bg-center animate-backgroundShift`}>
