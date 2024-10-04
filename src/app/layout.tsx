@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Kelly_Slab } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local'
+import DataProvider from "@/context/DataContext";
 
 
 const univers = localFont({
@@ -30,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${univers.variable} font-sans`}>
-      <body className={`${inter.variable} ${kelly.variable}`}>{children}</body>
+      <body className={`${inter.variable} ${kelly.variable}`}>
+        <DataProvider>
+        {children}
+        </DataProvider>
+        </body>
     </html>
   );
 }

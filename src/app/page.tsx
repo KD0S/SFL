@@ -3,6 +3,7 @@
 import VideoIntro from "./components/VideoIntro";
 import MainPage from "./components/MainPage";
 import { useState, useEffect} from "react";
+import DataProvider from '../context/DataContext';
 
 export default function Main() {
   const [content, setContent] = useState(<VideoIntro />)
@@ -11,5 +12,5 @@ export default function Main() {
     setContent(<MainPage />)
   }, 4000);
 
-  return content;
+  return <DataProvider>{content}</DataProvider>;
 }
