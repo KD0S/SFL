@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "src/context/DataContext.jsx", "src/app/components/YoutubePlaylist.jsx", "src/app/components/PlaylistItem.jsx", "src/pages/api/musicVideo.jsx"  ],
   "exclude": [
     "node_modules"
   ]

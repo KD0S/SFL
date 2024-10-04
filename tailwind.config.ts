@@ -14,6 +14,7 @@ const config: Config = {
         "visual": "url('/visualBg.png')",
         "stori": "url('/stori.png')",
         "trap": "url('/trap.png')",
+        "musicvid": "url('/MVbackground.png')",
         "visual-blur": "url('/visualBlurredBg.png')",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
