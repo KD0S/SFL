@@ -2,7 +2,7 @@
 
 import VideoIntro from "./components/VideoIntro";
 import MainPage from "./components/MainPage";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 export default function Main() {
   const [content, setContent] = useState(<VideoIntro />)

@@ -1,23 +1,7 @@
-'use client'
 import React from "react"
-import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
-import Youtube from "react-youtube"
-import Link from "next/link"
-
 
 export default function TrapNight() {
-
-    const opts = {
-        height: '400',
-        width: '800',
-        playerVars: {
-            // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
-            loop: 1,
-        },
-    };
-
     return (
         <main className="bg-trap w-screen overflow-scroll">
             <Navbar color="trap" prevPage="HOME" prevPageLink="/home" />
