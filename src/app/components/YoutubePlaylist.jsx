@@ -3,9 +3,9 @@ import React, { useContext } from 'react'
 import PlaylistItem from './PlaylistItem.jsx'
 import DataProvider, { DataContext } from '@/context/DataContext';
 
-const YoutubePlaylist = () => {
+const YoutubePlaylist = (props) => {
 
-    const {playlist} = useContext(DataContext);
+    const playlist = props.playlist
     console.log(playlist)
 
   return (

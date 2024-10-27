@@ -6,7 +6,8 @@ import ServerComponent from "../pages/api/musicVideo"
 export const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
-  const [playlist, setPlaylist] = useState("Hello World!");
+  const [musicVideos, setMusicVideos] = useState("Hello World!");
+  const [stew808, setStew808] = useState("Test");
   const [embedId, setEmbedId] = useState("z6fnyWLLz1Q");
   const [refresh, setRefresh] = useState(false);
 
@@ -25,9 +26,15 @@ const DataProvider = ({ children }) => {
     // Fetch data from backend
     const fetchData = async () => {
 
-      const response = await (await fetch('/api/musicVideo')).json();
-      console.log(response)
-      setPlaylist(response);
+      const response = await (await fetch('/api/playlist/PLO9Ra6c9ypYCTakC5eNzaCvVbnYOv5TKD')).json();
+      console.log(response);
+      setMusicVideos(response);
+
+      const response808 = await (await fetch('/api/playlist/PLO9Ra6c9ypYAg19jxcHTjTCLhxZgSwgqO')).json();
+      console.log(response808);
+      setStew808(response808);
+
+      //const 808response = await(await fetch(''))
 
     };
 
@@ -39,7 +46,7 @@ const DataProvider = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ embedId, setEmbedId, playlist, forceRefresh }}>
+    <DataContext.Provider value={{ embedId, setEmbedId, stew808 , musicVideos, forceRefresh }}>
       {children}
     </DataContext.Provider>
   );
