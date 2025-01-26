@@ -8,6 +8,7 @@ export const DataContext = createContext();
 const DataProvider = ({ children }) => {
   const [musicVideos, setMusicVideos] = useState("Hello World!");
   const [stew808, setStew808] = useState("Test");
+  const [audioWorks, setAudioWorks] = useState("Test");
   const [embedId, setEmbedId] = useState("z6fnyWLLz1Q");
   const [refresh, setRefresh] = useState(false);
 
@@ -34,6 +35,10 @@ const DataProvider = ({ children }) => {
       console.log(response808);
       setStew808(response808);
 
+      const responseAudio = await (await fetch('/api/playlist/PLO9Ra6c9ypYAjTfvsZCArHPZEWV4dsGgJ')).json();
+      console.log(responseAudio);
+      setAudioWorks(responseAudio);
+
       //const 808response = await(await fetch(''))
 
     };
@@ -46,7 +51,7 @@ const DataProvider = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ embedId, setEmbedId, stew808 , musicVideos, forceRefresh }}>
+    <DataContext.Provider value={{ embedId, setEmbedId, stew808, audioWorks, musicVideos, forceRefresh }}>
       {children}
     </DataContext.Provider>
   );

@@ -1,25 +1,31 @@
-
-import React from "react"
+'use client'
+import React, { useContext, useEffect } from "react"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import Link from "next/link"
+import VideoPlayer from "../components/VideoPlayer"
+import YoutubePlaylist from "../components/YoutubePlaylist"
+import { DataContext } from '@/context/DataContext'
 
 
 export default function Home() {
 
+    const { audioWorks, embedId, setEmbedId } = useContext(DataContext);
+
+    useEffect(()=>{
+
+        setEmbedId(audioWorks[0].embedId);
+
+    }, [audioWorks])
+
     return (
         <main className={`fixed h-full w-full bg-cloud bg-cover bg-center animate-backgroundShift`}>
-            <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-1"></div>
             <Navbar color="cloud" prevPage="HOME" prevPageLink="/home" />
-            <div className="absolute w-screen">
-                <h1 className='text-[48px] mt-20 mx-auto w-fit text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow'>AUDIO</h1>
-                <div className="flex flex-col mt-[100px] gap-4">
-                    <Link href="/audio/sfx" className='text-[28px] mx-auto w-fit text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow hover:text-[#e7ccbe]'>SFX</Link>
-                    <Link href="/audio/production" className='text-[28px] mx-auto w-fit text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow hover:text-[#e7ccbe]'>PRODUCTION</Link>
-                    <Link href="/audio/mix-n-master" className='text-[28px] mx-auto w-fit text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow hover:text-[#e7ccbe]'>MIX & MASTER</Link>
+                <h1 className='text-[2.5rem] mt-20 mb-4 mx-auto w-fit text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow'>AUDIO</h1>
+                <div className="mx-6 flex justify-center flex-wrap md:flex-nowrap gap-4  gap-10 h-[70%]">
+                <VideoPlayer embedId={embedId}/>
+                <YoutubePlaylist playlist={audioWorks}/>
                 </div>
-            </div>
-            <Footer />
         </main >
     )
 }
