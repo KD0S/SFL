@@ -38,18 +38,19 @@ export default async function ServerComponent(req, res) {
         },
     });
 
+    console.log("test")
     console.log(MusicVideosResponse)
 
   const transformedData = MusicVideosResponse.data.items.map(item => {
 
-      if(!item.snippet.thumbnails.maxres)
+      if(item.snippet.title === "Private video")
         return null;
 
       const publishedAt = item.snippet.publishedAt;
       const daysAgo = calculateDaysAgo(publishedAt);
 
       return {
-          maxresThumbnail: item.snippet.thumbnails.high.url, // Fallback to high if maxres doesn't exist
+          maxresThumbnail: item.snippet.thumbnails.high?.url, // Fallback to high if maxres doesn't exist
           title: item.snippet.title,
           channel: item.snippet.channelTitle,
           daysAgoPublished: daysAgo,
