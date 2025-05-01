@@ -15,7 +15,7 @@ export default function AudioPlayer() {
     const [triggerAudio, setTriggerAudio] = useState<boolean>(true)
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
-    const [isPaused,setIsPaused] = useState(false);
+    const [isPaused,setIsPaused] = useState(true);
 
     const [tracklist, setTracklist] = useState<string[]>(['onedove - CHOCKLAND (OFFICIAL MUSIC VIDEO)', 'DANN¥ & AbiShake - INTERNET CASH (Performance Video)', 'SFL Family (DANN¥ & AbiShake) (Audio Video)','Duski - Diego Costa (Official Video)']);
 

@@ -42,8 +42,6 @@ export default function Home() {
                     </div>
                 </div>
             </Tilt>
-
-            // test
             {/* <Footer /> */}
         </main >
     )
