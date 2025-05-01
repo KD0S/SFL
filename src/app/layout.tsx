@@ -3,6 +3,8 @@ import { Inter, Kelly_Slab } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local'
 import DataProvider from "@/context/DataContext";
+import Navbar from "./components/Navbar";
+import AudioPlayer from "./components/audioplayer/AudioPlayer";
 
 
 const univers = localFont({
@@ -33,6 +35,7 @@ export default function RootLayout({
     <html lang="en" className={`${univers.variable} font-sans`}>
       <body className={`${inter.variable} ${kelly.variable}`}>
         <DataProvider>
+        <Navbar color="cloud" prevPage="HOME" prevPageLink="/home" />
         {children}
         </DataProvider>
         </body>

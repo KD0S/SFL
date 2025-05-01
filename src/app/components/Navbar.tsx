@@ -3,6 +3,7 @@ import { transformSync } from 'next/dist/build/swc';
 import Link from 'next/link';
 import React from 'react';
 import { useState, useEffect } from 'react'
+import AudioPlayer from './audioplayer/AudioPlayer';
 
 type navProps = {
     color: string,
@@ -54,10 +55,14 @@ export default function Navbar({ color, prevPage, prevPageLink }: navProps) {
             <span className={`${colourScheme[color]} text-[16px] font-kelly my-auto mx-auto`}>
                 {dateTime.toLocaleDateString("en-GB")}&nbsp;&nbsp;{String(dateTime.getUTCHours() + 3).padStart(2, "0")}:{String(dateTime.getUTCMinutes()).padStart(2, "0")}</span>
 
+            <AudioPlayer/>
+
             <Link href={"/shop"} onMouseEnter={() => setIsHoveredLink2(true)} onMouseLeave={() => setIsHoveredLink2(false)} className={`w-24 my-auto text-end font-bold font-univers drop-shadow-xl text-[18px]transition-all`} style={isHoveredLink2 ? {
                 ...transitionStyle,
                 'color': colourHexCode[color]
             } : { 'color': 'white' }}>SHOP</Link>
+
+            
 
         </nav>
     )

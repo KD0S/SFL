@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <main className={`fixed flex flex-col justify-center h-screen w-screen bg-cloud bg-cover bg-center animate-backgroundShift`}>
             <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 z-2"></div>
-            <Navbar color='cloud' prevPage='CONTACT' prevPageLink='/contact' />
+            {/* <Navbar color='cloud' prevPage='CONTACT' prevPageLink='/contact' /> */}
             <Tilt tiltMaxAngleY={20} tiltMaxAngleX={20} perspective={1500} transitionEasing='cubic-bezier(.5,.98,.52,.99)'>
                 <div>
                     <div className='flex justify-center flex-row'>
@@ -42,7 +42,7 @@ export default function Home() {
                     </div>
                 </div>
             </Tilt>
-            <Footer />
+            {/* <Footer /> */}
         </main >
     )
 }

@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar"
 export default function TrapNight() {
     return (
         <main className="bg-trap w-screen overflow-scroll">
-            <Navbar color="trap" prevPage="HOME" prevPageLink="/home" />
+            {/* <Navbar color="trap" prevPage="HOME" prevPageLink="/home" /> */}
             <img src="/trapblack.png" alt="trap" className="mx-auto mt-20 w-[450px]" />
             <p className="text-[#EB00FF] font-kelly text-[24px] w-[900px] mx-auto text-center mt-20 bg-black p-2 rounded-xl backdrop-filter backdrop-blur-lg bg-opacity-60">
                 "TRAP NIGHT" isn't driven by a pursuit of fortune or fame; it's a manifestation of the unwavering love for the culture.

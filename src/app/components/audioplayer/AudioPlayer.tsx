@@ -1,13 +1,13 @@
 'use client'
 
 import React, { ChangeEvent, useEffect } from 'react'
-import CurrentTrackComponent from './audioplayer/CurrentTrackComponent'
-import PreviousButton from './audioplayer/PreviousButton'
-import NextButton from './audioplayer/NextButton'
-import PlayButton from './audioplayer/PlayButton'
+import CurrentTrackComponent from './CurrentTrackComponent'
+import PreviousButton from './PreviousButton'
+import NextButton from './NextButton'
+import PlayButton from './PlayButton'
 import { useState, useRef } from 'react'
 
-export default function Footer() {
+export default function AudioPlayer() {
 
     const audioRef = useRef<HTMLAudioElement>(null)
 
@@ -15,10 +15,23 @@ export default function Footer() {
     const [triggerAudio, setTriggerAudio] = useState<boolean>(true)
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [isPaused,setIsPaused] = useState(false);
 
-    const [tracklist, setTracklist] = useState(['onedove - CHOCKLAND (OFFICIAL MUSIC VIDEO)', 'DANN¥ & AbiShake - INTERNET CASH (Performance Video)', 'SFL Family (DANN¥ & AbiShake) (Audio Video)']);
+    const [tracklist, setTracklist] = useState<string[]>(['onedove - CHOCKLAND (OFFICIAL MUSIC VIDEO)', 'DANN¥ & AbiShake - INTERNET CASH (Performance Video)', 'SFL Family (DANN¥ & AbiShake) (Audio Video)','Duski - Diego Costa (Official Video)']);
 
     const mod = (n : number, m : number) => ((n % m) + m) % m;
+
+    function handlePausePlay() {
+        const audio = audioRef.current;
+        if (!audio) return;
+        if (audio.paused) {
+            audio.play();
+            return false;
+        } else {
+            audio.pause();
+            return true;
+        }
+    }
 
     function handleSongChange(isNext: boolean) {
 
@@ -56,6 +69,8 @@ export default function Footer() {
     };
 
     audio.addEventListener('timeupdate', updateProgress);
+    audio.addEventListener('play', () => setIsPaused(false));
+    audio.addEventListener('pause', () => setIsPaused(true));
     audio.addEventListener('loadedmetadata', setAudioData);
     audio.addEventListener('ended', handleNextSong);
 
@@ -63,6 +78,8 @@ export default function Footer() {
         audio.removeEventListener('timeupdate', updateProgress);
         audio.removeEventListener('loadedmetadata', setAudioData);
         audio.removeEventListener('ended', handleNextSong);
+        audio.removeEventListener('play', () => setIsPaused(false));
+        audio.removeEventListener('pause', () => setIsPaused(true));
     };
     }, []); 
 
@@ -95,8 +112,7 @@ export default function Footer() {
     }
 
     return (
-        <div className='flex w-full justify-center absolute bottom-0'>
-            <div className='bg-white border border-black drop-shadow-3xl border-b-0  p-5 rounded-t-xl'>
+            <div className='bg-white border border-black drop-shadow-3xl p-3 rounded-xl flex flex-row items-center'>
                 {/*
                 Let's keep it simple: 
                 - We need an audioref (for playing audio)
@@ -105,9 +121,15 @@ export default function Footer() {
 
                 <audio ref={audioRef} src={`/audio/tracklist/CHOCKLAND.mp3`} autoPlay={true}/>
 
+                <div className='flex flex-row items-center justify-center gap-2 mr-3'>
+                    <PreviousButton onClick={handleSongChange}/>
+                    <PlayButton onClick={handlePausePlay} isPaused={isPaused}/>
+                    <NextButton onClick={handleSongChange}/>
+                </div>
+
                 <CurrentTrackComponent tracklist={tracklist} songId={songId}/>
 
-                <div className="mt-4 w-full flex items-center gap-2">
+                {/* <div className="mt-4 w-full flex items-center gap-2">
                     <span className="font-univers text-xs text-black p-[0.1rem] pl-[0.4rem] pr-[0.5rem]">{formatTime(currentTime)}</span>
                     <input
                         type="range"
@@ -119,15 +141,7 @@ export default function Footer() {
                         className="w-full cursor-pointer accent-black"
                     />
                     <span className="font-univers text-xs text-black p-[0.1rem] pl-[0.4rem] pr-[0.5rem]">{formatTime(duration)}</span>
-                </div>
-
-                <div className='mt-3 flex flex-row items-center justify-center gap-4'>
-                    <PreviousButton onClick={handleSongChange}/>
-                    <PlayButton/>
-                    <NextButton onClick={handleSongChange}/>
-                </div>
-
-                
+                </div> */}
 
                 {/* <AudioSlider/> */}
                 
@@ -139,6 +153,5 @@ export default function Footer() {
                 <AudioSlider/> */}
                 {/* <AudioSlider/> */}
             </div>
-        </div>
     )
 }

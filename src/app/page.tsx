@@ -4,6 +4,7 @@ import VideoIntro from "./components/VideoIntro";
 import MainPage from "./components/MainPage";
 import { useState, useEffect } from "react";
 import DataProvider from '../context/DataContext';
+import PlaylistItem from "./components/PlaylistItem";
 
 export default function Main() {
   const [content, setContent] = useState(<VideoIntro />)
@@ -12,5 +13,7 @@ export default function Main() {
     setContent(<MainPage />)
   }, 4000);
 
-  return <DataProvider>{content}</DataProvider>;
+  return <DataProvider>
+    {content}
+    </DataProvider>;
 }

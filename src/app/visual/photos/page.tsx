@@ -8,7 +8,7 @@ export default function Visual() {
 
     return (
         <main className={`w-screen bg-visual-blur animate-fadeIn overflow-scroll`}>
-            <Navbar color="visual" prevPage="HOME" prevPageLink="/home" />
+            {/* <Navbar color="visual" prevPage="HOME" prevPageLink="/home" /> */}
             <h1 className='text-[48px] mt-20 mx-auto w-fit text-white italic font-bold font-univers drop-shadow-3xl hover:drop-shadow-glow'>PHOTOS</h1>
             <div className="flex flex-col p-10 gap-20">
                 <div className="flex justify-between px-20">
