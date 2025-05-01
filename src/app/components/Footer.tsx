@@ -123,7 +123,7 @@ export default function Footer() {
 
                 <div className='mt-3 flex flex-row items-center justify-center gap-4'>
                     <PreviousButton onClick={handleSongChange}/>
-                    <PlayButton/>
+                    {/* <PlayButton/> */}
                     <NextButton onClick={handleSongChange}/>
                 </div>
 
