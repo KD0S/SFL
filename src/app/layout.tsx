@@ -5,6 +5,8 @@ import localFont from 'next/font/local'
 import DataProvider from "@/context/DataContext";
 import Navbar from "./components/Navbar";
 import AudioPlayer from "./components/audioplayer/AudioPlayer";
+import { useContext } from "react";
+import { DataContext } from "@/context/DataContext";
 
 
 const univers = localFont({
@@ -35,10 +37,10 @@ export default function RootLayout({
     <html lang="en" className={`${univers.variable} font-sans`}>
       <body className={`${inter.variable} ${kelly.variable}`}>
         <DataProvider>
-        <Navbar color="cloud" prevPage="HOME" prevPageLink="/home" />
-        {children}
+          <Navbar color="cloud" prevPage="HOME" prevPageLink="/home" />
+          {children}
         </DataProvider>
-        </body>
+      </body>
     </html>
   );
 }

@@ -11,6 +11,7 @@ const DataProvider = ({ children }) => {
   const [audioWorks, setAudioWorks] = useState("Test");
   const [embedId, setEmbedId] = useState("z6fnyWLLz1Q");
   const [refresh, setRefresh] = useState(false);
+  const [onMainPage, setOnMainPage] = useState(false);
 
   const axiosInstance = axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3',
@@ -51,7 +52,7 @@ const DataProvider = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ embedId, setEmbedId, stew808, audioWorks, musicVideos, forceRefresh }}>
+    <DataContext.Provider value={{ embedId, setEmbedId, stew808, audioWorks, musicVideos, forceRefresh, onMainPage, setOnMainPage }}>
       {children}
     </DataContext.Provider>
   );

@@ -4,8 +4,16 @@ import Tilt from 'react-parallax-tilt'
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import Link from 'next/link'
+import { useContext, useEffect } from 'react'
+import {DataContext} from '@/context/DataContext'
 
 export default function Home() {
+
+    const {setOnMainPage} = useContext(DataContext)
+
+    useEffect(()=>{
+        setOnMainPage(true)
+    },[])
 
     return (
         <main className={`fixed flex flex-col justify-center h-screen w-screen bg-cloud bg-cover bg-center animate-backgroundShift`}>

@@ -1,9 +1,10 @@
 'use client'
 import { transformSync } from 'next/dist/build/swc';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState, useEffect } from 'react'
 import AudioPlayer from './audioplayer/AudioPlayer';
+import { DataContext } from '@/context/DataContext';
 
 type navProps = {
     color: string,
@@ -44,7 +45,10 @@ export default function Navbar({ color, prevPage, prevPageLink }: navProps) {
         'stori': 'text-[#ff8726]'
     }
 
+    const { onMainPage } = useContext(DataContext);
+
     return (
+        (onMainPage &&
         <nav className='top-0 w-full h-12 bg-black absolute flex justify-between z-10 px-5'>
 
             <Link href={prevPageLink} onMouseEnter={() => setIsHoveredLink1(true)} onMouseLeave={() => setIsHoveredLink1(false)} className={`w-24 my-auto text-start font-bold font-univers drop-shadow-xl text-[18px]transition-all`} style={isHoveredLink1 ? {
@@ -65,6 +69,6 @@ export default function Navbar({ color, prevPage, prevPageLink }: navProps) {
             
 
         </nav>
-    )
+    ))
 }
 
